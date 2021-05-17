@@ -33,12 +33,13 @@ public class GameEngine extends GameCore
     private GameAction jump;
     private GameAction exit;
     private int collectedStars=0;
-    private int numLives=6;
+    private int numLives=2;
    
     public void init()
     {
         super.init();
-        
+        numLives = 2;
+        collectedStars=0;
         // set up input manager
         initInput();
         
@@ -355,6 +356,7 @@ public class GameEngine extends GameCore
                         ex.printStackTrace();
                     }
                     stop();
+                    
                 }
             }
         }
@@ -362,7 +364,7 @@ public class GameEngine extends GameCore
     
     
     /**
-     * Gives the player the speicifed power up and removes it
+     * Gives the player the specifed power up and removes it
      * from the map.
      */
     public void acquirePowerUp(PowerUp powerUp) {
@@ -380,14 +382,12 @@ public class GameEngine extends GameCore
             
         } else if (powerUp instanceof PowerUp.Music) {
             // change the music
-            
         } else if (powerUp instanceof PowerUp.Goal) {
-            // advance to next map      
-      
+            // advance to next map
             map = mapLoader.loadNextMap();
-            
         }
-    }
-    
-      
+    }    
 }
+
+
+

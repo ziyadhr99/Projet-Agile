@@ -44,16 +44,16 @@ public abstract class GameCore {
         Calls init() and gameLoop()
     */
     public void run() {
-        try {
-            init();
-            gameLoop();
-        }
-        finally {
-            screen.restoreScreen();
-            lazilyExit();
-        }
+    	while(true) {
+	        try {
+	            init();
+	            gameLoop();
+	        }
+	        finally {
+	            screen.restoreScreen();
+	        }
+    	}
     }
-
 
     /**
         Exits the VM from a daemon thread. The daemon thread waits
@@ -74,6 +74,7 @@ public abstract class GameCore {
                 System.exit(0);
             }
         };
+        
         thread.setDaemon(true);
         thread.start();
     }
