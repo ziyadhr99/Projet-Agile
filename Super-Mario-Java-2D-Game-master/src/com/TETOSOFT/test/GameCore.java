@@ -22,7 +22,10 @@ public abstract class GameCore {
         new DisplayMode(640, 480, 24, 0),
         new DisplayMode(1024, 768, 16, 0),
         new DisplayMode(1024, 768, 32, 0),
-        new DisplayMode(1024, 768, 24, 0),
+        new DisplayMode(1024, 768, 24 , 0),
+        new DisplayMode(1920,1080 ,16 ,0),
+        new DisplayMode(1920,1080 ,24 ,0),
+        new DisplayMode(1920,1080 ,32 ,0)
     };
 
     private boolean isRunning;
@@ -82,8 +85,8 @@ public abstract class GameCore {
     public void init() 
     {
         screen = new ScreenManager();
-        DisplayMode displayMode =
-        screen.findFirstCompatibleMode(POSSIBLE_MODES);
+        DisplayMode displayMode = screen.getCurrentDisplayMode();
+        /*screen.findFirstCompatibleMode(POSSIBLE_MODES);*/
         screen.setFullScreen(displayMode);
 
         Window window = screen.getFullScreenWindow();

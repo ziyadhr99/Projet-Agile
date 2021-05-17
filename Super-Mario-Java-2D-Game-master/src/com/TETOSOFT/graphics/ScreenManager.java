@@ -15,6 +15,7 @@ public class ScreenManager
     {
         GraphicsEnvironment environment = GraphicsEnvironment.getLocalGraphicsEnvironment();
         device = environment.getDefaultScreenDevice();
+        
     }
 
 
@@ -82,6 +83,7 @@ public class ScreenManager
         frame.setUndecorated(true);
         frame.setIgnoreRepaint(true);
         frame.setResizable(false);
+        
 
         device.setFullScreenWindow(frame);
 
@@ -161,6 +163,7 @@ public class ScreenManager
         if (window != null) 
         {
             return window.getWidth();
+        	
         }
         else 
         {
@@ -176,6 +179,7 @@ public class ScreenManager
         if (window != null) 
         {
             return window.getHeight();
+        	
         }
         else 
         {
