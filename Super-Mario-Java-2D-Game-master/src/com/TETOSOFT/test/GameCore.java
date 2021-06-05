@@ -36,7 +36,7 @@ public abstract class GameCore {
         Signals the game loop that it's time to quit
     */
     public void stop() {
-        isRunning = false;
+    	System.exit(0);
     }
 
 

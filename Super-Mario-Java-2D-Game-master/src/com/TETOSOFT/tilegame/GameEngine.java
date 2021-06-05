@@ -84,7 +84,7 @@ public class GameEngine extends GameCore
     {
         
         if (exit.isPressed()) {
-            stop();
+        	stop();
         }
         
         Player player = (Player)map.getPlayer();
