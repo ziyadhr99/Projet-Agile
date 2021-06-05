@@ -32,6 +32,7 @@ public class GameEngine extends GameCore
     private GameAction moveRight;
     private GameAction jump;
     private GameAction exit;
+    private GameAction pause;
     private int collectedStars=0;
     private int numLives=2;
    
@@ -69,6 +70,7 @@ public class GameEngine extends GameCore
         moveRight = new GameAction("moveRight");
         jump = new GameAction("jump", GameAction.DETECT_INITAL_PRESS_ONLY);
         exit = new GameAction("exit",GameAction.DETECT_INITAL_PRESS_ONLY);
+        pause = new GameAction("pause", GameAction.DETECT_INITAL_PRESS_ONLY);
         
         inputManager = new InputManager(screen.getFullScreenWindow());
         inputManager.setCursor(InputManager.INVISIBLE_CURSOR);
@@ -77,11 +79,15 @@ public class GameEngine extends GameCore
         inputManager.mapToKey(moveRight, KeyEvent.VK_RIGHT);
         inputManager.mapToKey(jump, KeyEvent.VK_SPACE);
         inputManager.mapToKey(exit, KeyEvent.VK_ESCAPE);
+        inputManager.mapToKey(pause, KeyEvent.VK_P);
     }
     
     
     private void checkInput(long elapsedTime) 
     {
+    	if (pause.isPressed()) {
+    		 
+        }
         
         if (exit.isPressed()) {
         	stop();
