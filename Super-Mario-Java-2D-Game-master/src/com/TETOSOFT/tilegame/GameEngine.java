@@ -64,6 +64,9 @@ public class GameEngine extends GameCore
         
     }
     
+    public void killgame(){
+    	System.exit(0);
+    }
     
     private void initInput() {
         moveLeft = new GameAction("moveLeft");
@@ -90,7 +93,7 @@ public class GameEngine extends GameCore
         }
         
         if (exit.isPressed()) {
-        	stop();
+        	killgame();
         }
         
         Player player = (Player)map.getPlayer();
